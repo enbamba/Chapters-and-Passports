@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yosemite Weekend Itinerary | Chapters & Passports LLC</title>
+  <style>
+    :root {
+      --sand: #E8D8BF;
+      --cream: #F8F2E8;
+      --stone: #A8917A;
+      --coast: #789A9A;
+      --deep: #183B3D;
+      --ink: #243130;
+      --sage: #AAB6A2;
+      --gold: #C79D5D;
+      --white: #FFFFFF;
+      --shadow: 0 22px 60px rgba(24, 59, 61, .18);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--cream) 0%, #efe3d0 45%, #dfe8e5 100%);
+      line-height: 1.55;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(199,157,93,.45), transparent 22%),
+        radial-gradient(circle at 80% 10%, rgba(120,154,154,.55), transparent 28%),
+        radial-gradient(circle at 60% 80%, rgba(170,182,162,.55), transparent 26%);
+      z-index: -1;
+    }
+
+    a { color: inherit; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px clamp(20px, 5vw, 72px);
+      background: rgba(248, 242, 232, .82);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(24, 59, 61, .08);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .78rem;
+      color: var(--deep);
+    }
+
+    .stamp {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--deep);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: Georgia, serif;
+      font-weight: 700;
+      color: var(--deep);
+      position: relative;
+    }
+
+    .stamp::after {
+      content: "✈";
+      position: absolute;
+      right: -6px;
+      top: 12px;
+      transform: rotate(-18deg);
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: .9rem;
+      color: rgba(36,49,48,.75);
+    }
+
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--deep); }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 38px;
+      align-items: center;
+      padding: clamp(54px, 8vw, 108px) clamp(20px, 5vw, 72px) 52px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--deep);
+      font-size: .8rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--deep);
+      font-size: clamp(3.7rem, 8.5vw, 8.2rem);
+      line-height: .9;
+      letter-spacing: -.06em;
+      max-width: 850px;
+    }
+
+    .hero-copy {
+      margin: 26px 0 0;
+      font-size: clamp(1.04rem, 1.5vw, 1.25rem);
+      max-width: 650px;
+      color: rgba(36,49,48,.82);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      border: 1px solid var(--deep);
+      border-radius: 999px;
+      padding: 13px 20px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .92rem;
+    }
+
+    .button.primary {
+      background: var(--deep);
+      color: var(--cream);
+      box-shadow: 0 12px 28px rgba(24,59,61,.2);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.56);
+      border: 1px solid rgba(255,255,255,.65);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "YOSEMITE";
+      position: absolute;
+      right: -28px;
+      top: 44px;
+      transform: rotate(12deg);
+      border: 2px solid rgba(24,59,61,.22);
+      color: rgba(24,59,61,.26);
+      border-radius: 999px;
+      padding: 8px 26px;
+      font-weight: 800;
+      letter-spacing: .2em;
+    }
+
+    .photo-plate {
+      min-height: 360px;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      background: var(--deep);
+    }
+
+    .photo-plate img, .photo-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-plate::after, .photo-tile::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(24,59,61,.78), rgba(24,59,61,.08) 60%, rgba(255,255,255,.05));
+      pointer-events: none;
+    }
+
+
+    .photo-plate.image-failed::before, .photo-tile.image-failed::before {
+      content: "Image preview unavailable";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(248,242,232,.72);
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: .8rem;
+      background:
+        linear-gradient(135deg, rgba(24,59,61,.96), rgba(120,154,154,.6)),
+        radial-gradient(circle at 25% 20%, rgba(199,157,93,.55), transparent 24%);
+    }
+
+    .photo-caption {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      color: var(--cream);
+      z-index: 2;
+      font-size: .9rem;
+      font-weight: 700;
+      text-shadow: 0 2px 18px rgba(0,0,0,.35);
+    }
+
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .photo-tile {
+      min-height: 330px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(24,59,61,.12);
+      border: 1px solid rgba(255,255,255,.7);
+      position: relative;
+      background: var(--deep);
+    }
+
+    .photo-tile.large { grid-row: span 2; min-height: 680px; }
+
+    .credit-note {
+      margin-top: 14px;
+      font-size: .78rem;
+      color: rgba(36,49,48,.58);
+    }
+
+    .card-details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .detail {
+      background: rgba(248,242,232,.8);
+      border: 1px solid rgba(24,59,61,.08);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .detail small {
+      display: block;
+      color: rgba(36,49,48,.55);
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: .12em;
+      font-size: .67rem;
+      margin-bottom: 4px;
+    }
+
+    .section {
+      padding: 64px clamp(20px, 5vw, 72px);
+    }
+
+    .section-title {
+      font-family: Georgia, serif;
+      color: var(--deep);
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1;
+      margin: 0 0 18px;
+      letter-spacing: -.045em;
+    }
+
+    .section-intro { max-width: 760px; color: rgba(36,49,48,.76); margin-bottom: 34px; }
+
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .overview-card, .day-card, .note-card {
+      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(255,255,255,.7);
+      border-radius: var(--radius);
+      box-shadow: 0 16px 40px rgba(24,59,61,.1);
+    }
+
+    figure { margin: 0; }
+    .overview-card { padding: 24px; }
+    .overview-card h3 { margin: 0 0 8px; color: var(--deep); font-size: 1.1rem; }
+    .overview-card p { margin: 0; color: rgba(36,49,48,.72); }
+
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+
+    .day-card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      overflow: hidden;
+    }
+
+    .date-panel {
+      background: linear-gradient(160deg, var(--deep), #2b5a59);
+      color: var(--cream);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 220px;
+    }
+
+    .date-panel .month {
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: .8rem;
+      color: rgba(248,242,232,.68);
+    }
+
+    .date-panel .day {
+      font-family: Georgia, serif;
+      font-size: 4.4rem;
+      line-height: .9;
+    }
+
+    .date-panel .label { font-weight: 700; }
+
+    .day-content { padding: 28px; }
+    .day-content h3 { margin: 0 0 18px; color: var(--deep); font-size: 1.45rem; }
+
+    .item {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid rgba(24,59,61,.09);
+    }
+
+    .item:first-of-type { border-top: 0; padding-top: 0; }
+    .time { font-weight: 800; color: var(--coast); font-size: .92rem; }
+    .item strong { color: var(--deep); }
+    .item p { margin: 5px 0 0; color: rgba(36,49,48,.74); }
+
+    .stops {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .stop {
+      background: rgba(248,242,232,.72);
+      border: 1px solid rgba(24,59,61,.08);
+      border-radius: 18px;
+      padding: 14px;
+      min-height: 140px;
+    }
+
+    .stop span { color: var(--gold); font-weight: 900; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; }
+    .stop h4 { margin: 5px 0; color: var(--deep); }
+    .stop p { margin: 0; font-size: .9rem; color: rgba(36,49,48,.73); }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .note-card { padding: 24px; }
+    .note-card h3 { margin-top: 0; color: var(--deep); }
+    .price-list { display: grid; gap: 10px; }
+    .price-list div { display:flex; justify-content:space-between; border-bottom:1px solid rgba(24,59,61,.1); padding-bottom:10px; }
+
+    .footer {
+      padding: 42px clamp(20px, 5vw, 72px) 58px;
+      color: rgba(36,49,48,.65);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid rgba(24,59,61,.1);
+    }
+
+    .footer strong { color: var(--deep); }
+
+    @media (max-width: 980px) {
+      .hero, .day-card, .split { grid-template-columns: 1fr; }
+      .overview, .photo-gallery { grid-template-columns: 1fr; }
+      .photo-tile.large { min-height: 430px; }
+      .stops { grid-template-columns: 1fr 1fr; }
+      .date-panel { min-height: auto; gap: 28px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .card-details, .stops { grid-template-columns: 1fr; }
+      .item { grid-template-columns: 1fr; gap: 4px; }
+      h1 { font-size: 3.5rem; }
+      .footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand"><div class="stamp">C&P</div><span>Chapters & Passports LLC</span></div>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#itinerary">Itinerary</a>
+      <a href="#details">Details</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Curated mountain escape</div>
+        <h1>Yosemite Weekend</h1>
+        <p class="hero-copy">A scenic three-night itinerary based at Rush Creek Lodge, designed around pool time, iconic valley viewpoints, family-style dining, stargazing, and easy-to-moderate hiking options.</p>
+        <div class="cta-row">
+          <a class="button primary" href="#itinerary">View the itinerary</a>
+          <a class="button" href="#details">Trip details</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Trip summary card">
+        <div class="photo-plate">
+          <img loading="eager" onerror="this.parentElement.classList.add('image-failed'); this.remove();" src="https://www.nps.gov/npgallery/GetAsset/D5D983CC-1DD8-B71B-0B391ED103644554" alt="Half Dome at sunset in Yosemite National Park" />
+          <div class="photo-caption">Half Dome sunset · Yosemite National Park</div>
+        </div>
+        <div class="card-details">
+          <div class="detail"><small>Dates</small><strong>July 17–20</strong></div>
+          <div class="detail"><small>Length</small><strong>3 nights</strong></div>
+          <div class="detail"><small>Lodging</small><strong>Rush Creek Lodge</strong></div>
+          <div class="detail"><small>Style</small><strong>Family + scenic</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="overview">
+      <h2 class="section-title">Trip overview</h2>
+      <p class="section-intro">This itinerary keeps the rhythm relaxed: lodge amenities on arrival, a classic Yosemite Valley loop on day two, and hiking options on day three before heading home.</p>
+      <div class="overview">
+        <div class="overview-card"><h3>Basecamp</h3><p>Stay at Rush Creek Lodge, with onsite dining, pool time, and access to the Adventure Trail.</p></div>
+        <div class="overview-card"><h3>Signature sights</h3><p>Tunnel View, Cathedral Beach, El Capitan Meadow, Sentinel Bridge, Cook’s Meadow Loop, and Valley View.</p></div>
+        <div class="overview-card"><h3>Hike options</h3><p>Choose between the onsite Adventure Trail, Hetch Hetchy to Wapama Falls, or Mirror Lake Trail.</p></div>
+      </div>
+      <div class="photo-gallery" aria-label="Yosemite and Rush Creek Lodge photo gallery">
+        <figure class="photo-tile large">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-failed'); this.remove();" src="https://www.nps.gov/npgallery/GetAsset/F0103896-0B72-4458-8DCC-9393098FCB46" alt="Half Dome in Yosemite National Park" />
+          <figcaption class="photo-caption">Yosemite Valley · Half Dome</figcaption>
+        </figure>
+        <figure class="photo-tile">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-failed'); this.remove();" src="https://admin.rushcreeklodge.com/wp-content/uploads/sites/3/Lodge-King-Interior-Kim-Carroll-5-23_5DSR7498-1300.jpg" alt="Rush Creek Lodge room interior" />
+          <figcaption class="photo-caption">Rush Creek Lodge · warm lodge interiors</figcaption>
+        </figure>
+        <figure class="photo-tile">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-failed'); this.remove();" src="https://admin.rushcreeklodge.com/wp-content/uploads/sites/3/Rush-Creek-Lodge-Suite-Balcony-Kim-Carroll-7-16-1300.jpg" alt="Rush Creek Lodge balcony with forest views" />
+          <figcaption class="photo-caption">Rush Creek Lodge · forest-view balcony</figcaption>
+        </figure>
+        <figure class="photo-tile">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-failed'); this.remove();" src="https://www.nps.gov/npgallery/GetAsset/20AE2C74-155D-4519-3E14-078485D1CE58" alt="Half Dome reflected in the Merced River in Yosemite" />
+          <figcaption class="photo-caption">Merced River · Yosemite reflections</figcaption>
+        </figure>
+        <figure class="photo-tile">
+          <img loading="lazy" onerror="this.parentElement.classList.add('image-failed'); this.remove();" src="https://admin.rushcreeklodge.com/wp-content/uploads/sites/3/Rush-Creek-Lodge-King-Bed-Kim-Carroll-10-16_2-1300.jpg" alt="Rush Creek Lodge guest room" />
+          <figcaption class="photo-caption">Rush Creek Lodge · guest room</figcaption>
+        </figure>
+      </div>
+      <p class="credit-note">Photo sources include National Park Service public-domain photography and Rush Creek Lodge official photography.</p>
+    </section>
+
+    <section class="section" id="itinerary">
+      <h2 class="section-title">Day-by-day itinerary</h2>
+      <div class="timeline">
+        <article class="day-card">
+          <div class="date-panel"><div><div class="month">July</div><div class="day">17</div></div><div class="label">Arrival day</div></div>
+          <div class="day-content">
+            <h3>Settle into Rush Creek Lodge</h3>
+            <div class="item"><div class="time">3:00 PM</div><div><strong>Hotel check-in</strong><p>Arrive, check in, and get settled at Rush Creek Lodge.</p></div></div>
+            <div class="item"><div class="time">3–7 PM</div><div><strong>Pool day</strong><p>Ease into the weekend with an afternoon by the pool.</p></div></div>
+            <div class="item"><div class="time">7–9 PM</div><div><strong>Dinner at The Tavern</strong><p>Enjoy onsite dining at Rush Creek Lodge.</p></div></div>
+            <div class="item"><div class="time">9 PM</div><div><strong>Stargazing and/or s’mores</strong><p>End the night with a cozy lodge activity under the mountain sky.</p></div></div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="date-panel"><div><div class="month">July</div><div class="day">18</div></div><div class="label">Yosemite Valley</div></div>
+          <div class="day-content">
+            <h3>Iconic Yosemite viewpoints + picnic</h3>
+            <div class="item"><div class="time">8 AM–2 PM</div><div><strong>Enter Yosemite National Park</strong><p>Follow a scenic valley route with classic photo stops and an optional easy meadow walk.</p></div></div>
+            <div class="stops">
+              <div class="stop"><span>Stop 1</span><h4>Tunnel View</h4><p>The classic panorama with Half Dome, El Capitan, and Bridalveil Fall.</p></div>
+              <div class="stop"><span>Stop 2</span><h4>Cathedral Beach</h4><p>A relaxed picnic stop with El Capitan views reflected in the Merced River.</p></div>
+              <div class="stop"><span>Stop 3</span><h4>El Capitan Meadow</h4><p>A quick stop for the granite face and possible climber spotting.</p></div>
+              <div class="stop"><span>Stop 4</span><h4>Sentinel Bridge</h4><p>A famous photo spot framing Half Dome above the Merced River.</p></div>
+              <div class="stop"><span>Stop 5</span><h4>Valley View</h4><p>A beautiful pullout with the Merced River, El Capitan, and Cathedral Rocks.</p></div>
+            </div>
+            <div class="item"><div class="time">Optional</div><div><strong>Cook’s Meadow Loop</strong><p>Easy 1-mile walk before leaving the valley.</p></div></div>
+            <div class="item"><div class="time">3–7 PM</div><div><strong>Pool time</strong><p>Return to the lodge for a relaxed afternoon.</p></div></div>
+            <div class="item"><div class="time">7:30 PM</div><div><strong>Family-style dinner at Rush Creek Lodge</strong><p>$50 per adult and $22 per child ages 3–12, before 22% service fee and current sales tax.</p></div></div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="date-panel"><div><div class="month">July</div><div class="day">19</div></div><div class="label">Hike day</div></div>
+          <div class="day-content">
+            <h3>Morning trail + afternoon hike choice</h3>
+            <div class="item"><div class="time">7–9 AM</div><div><strong>Adventure Trail</strong><p>Morning hike from Rush Creek Lodge. Distance: 2.7 miles round trip.</p></div></div>
+            <div class="split">
+              <div class="note-card"><h3>Option A</h3><p><strong>Hetch Hetchy Reservoir → Wapama Falls</strong></p><p>Drive: about 45 minutes<br>Distance: 5 miles round trip</p></div>
+              <div class="note-card"><h3>Option B</h3><p><strong>Mirror Lake Trail</strong></p><p>Distance: 2–5 miles round trip. Mostly flat, excellent for photography, and known for Half Dome reflections when conditions are right.</p></div>
+            </div>
+            <div class="item"><div class="time">7–9 PM</div><div><strong>Dinner at The Tavern</strong><p>Close the final full day with onsite dinner at Rush Creek Lodge.</p></div></div>
+          </div>
+        </article>
+
+        <article class="day-card">
+          <div class="date-panel"><div><div class="month">July</div><div class="day">20</div></div><div class="label">Departure</div></div>
+          <div class="day-content">
+            <h3>Check out + head home</h3>
+            <div class="item"><div class="time">Morning</div><div><strong>Hotel check-out</strong><p>Pack up, check out of the hotel, and head back home.</p></div></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="details">
+      <h2 class="section-title">Good-to-know details</h2>
+      <div class="split">
+        <div class="note-card">
+          <h3>Family-style dinner pricing</h3>
+          <div class="price-list">
+            <div><span>Adults</span><strong>$50</strong></div>
+            <div><span>Children ages 3–12</span><strong>$22</strong></div>
+          </div>
+          <p>Prices do not include the 22% service fee or current sales tax.</p>
+        </div>
+        <div class="note-card">
+          <h3>Trip pacing</h3>
+          <p>The schedule intentionally balances sightseeing with pool time and onsite meals, so the weekend feels scenic without being overpacked.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div><strong>Chapters & Passports LLC</strong><br>Curated travel chapters for memorable escapes.</div>
+    <div>Yosemite · July 17–20 · Rush Creek Lodge</div>
+  </footer>
+</body>
+</html>
