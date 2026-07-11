@@ -9,88 +9,103 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#itinerary">Skip to itinerary</a>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Chapters and Passports home">
-      <span class="brand-mark">C&amp;P</span>
-      <span><strong>Chapters &amp; Passports</strong><small>Curated journeys, beautifully told</small></span>
-    </a>
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
-      <a href="#overview">Overview</a><a href="#itinerary">Itinerary</a><a href="#cathedral">Cathedral Beach</a><a href="#packing">Packing</a><a href="#stay">Stay</a>
-    </nav>
-  </header>
+<a class="skip" href="#itinerary">Skip to itinerary</a>
+<header class="nav-wrap">
+  <a class="brand" href="#top" aria-label="Chapters and Passports home">
+    <span class="stamp">C&amp;P</span>
+    <span><strong>Chapters &amp; Passports</strong><small>Curated journeys, beautifully told</small></span>
+  </a>
+  <button class="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav id="nav"><a href="#overview">Overview</a><a href="#itinerary">Itinerary</a><a href="#cathedral">Cathedral Beach</a><a href="#packing">Packing</a><a href="#stay">Stay</a></nav>
+</header>
+<main id="top">
+  <section class="hero">
+    <img class="hero-image remote-image" src="https://www.nps.gov/npgallery/GetAsset/20AE2C74-155D-4519-3E14-078485D1CE58" alt="Yosemite Valley and the Merced River" data-fallback="scenic-fallback">
+    <div class="hero-shade"></div>
+    <div class="hero-copy reveal">
+      <p class="kicker">Chapters &amp; Passports presents</p>
+      <h1>Yosemite<br><em>Weekend Escape</em></h1>
+      <p>Four thoughtfully paced days of iconic valley views, relaxed lodge time and an unhurried Cathedral Beach picnic.</p>
+      <div class="chips"><span>July 17–20, 2026</span><span>3 nights</span><span>Rush Creek Lodge</span></div>
+      <a class="btn light" href="#itinerary">Explore the journey</a>
+    </div>
+    <aside class="hero-note reveal"><span>Travel note</span><p>Leave Rush Creek Lodge early for Yosemite Valley. Summer traffic and parking become busier later in the morning.</p></aside>
+  </section>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content reveal">
-        <p class="eyebrow">Chapters &amp; Passports presents</p>
-        <h1>Yosemite<br><em>Weekend Escape</em></h1>
-        <p class="hero-copy">Three nights of iconic valley views, relaxed lodge time and an easygoing Cathedral Beach picnic.</p>
-        <div class="hero-meta"><span>July 17–20</span><span>3 nights</span><span>Rush Creek Lodge</span></div>
-        <a class="button button-light" href="#itinerary">Explore the journey</a>
+  <section id="overview" class="shell intro">
+    <div><p class="kicker dark">The weekend at a glance</p><h2>A scenic Yosemite escape with room to breathe.</h2></div>
+    <div><p class="lead">The itinerary blends Yosemite’s essential viewpoints with pool time, easy dining and flexible hiking. Saturday centers on Cathedral Beach, followed by classic valley stops and dinner at 6:30 PM.</p>
+      <div class="stats"><div><b>5</b><span>signature stops</span></div><div><b>3</b><span>picnic hours</span></div><div><b>2</b><span>Sunday hike choices</span></div></div>
+    </div>
+  </section>
+
+  <section class="editorial-grid shell">
+    <figure class="feature-photo scenic-fallback"><img class="remote-image" src="https://www.nps.gov/npgallery/GetAsset/D5D983CC-1DD8-B71B-0B391ED103644554" alt="Half Dome illuminated at sunset" loading="lazy"><figcaption><b>Half Dome</b><span>Golden-hour granite</span></figcaption></figure>
+    <blockquote><p>“A slower itinerary leaves more space for the moments you remember.”</p><cite>Chapters &amp; Passports</cite></blockquote>
+    <figure><img src="rush-room.jpg" alt="Guest room at Rush Creek Lodge" loading="lazy"><figcaption><b>Rush Creek Lodge</b><span>Contemporary mountain comfort</span></figcaption></figure>
+  </section>
+
+  <section id="itinerary" class="itinerary">
+    <div class="shell"><div class="heading"><p class="kicker">Your itinerary</p><h2>Four days, thoughtfully paced.</h2></div>
+      <div class="days">
+        <article class="day reveal"><div class="date"><span>Fri</span><b>17</b><small>July</small></div><div class="day-content"><h3>Arrival &amp; lodge afternoon</h3>
+          <div class="event"><time>3:00 PM</time><div><h4>Check in at Rush Creek Lodge</h4><p>Settle in and explore the property.</p></div></div>
+          <div class="event"><time>3:00–7:00 PM</time><div><h4>Pool time</h4><p>Relax and reset after the drive.</p></div></div>
+          <div class="event"><time>7:00 PM</time><div><h4>Dinner at The Tavern</h4><p>Optional stargazing and s’mores at 9:00 PM.</p></div></div>
+        </div></article>
+
+        <article class="day featured reveal"><div class="date"><span>Sat</span><b>18</b><small>July</small></div><div class="day-content"><h3>Yosemite Valley &amp; Cathedral Beach</h3>
+          <div class="event"><time>8:00 AM</time><div><h4>Enter Yosemite National Park</h4><p>Begin early for lighter traffic and easier parking.</p></div></div>
+          <div class="route">
+            <a href="https://maps.google.com/?q=Tunnel+View+Yosemite" target="_blank" rel="noopener"><b>01</b><span>Tunnel View</span><small>El Capitan, Half Dome and Bridalveil Fall.</small></a>
+            <a href="https://maps.google.com/?q=Cathedral+Beach+Picnic+Area+Yosemite" target="_blank" rel="noopener"><b>02</b><span>Cathedral Beach</span><small>Picnic along the Merced River.</small></a>
+            <a href="https://maps.google.com/?q=El+Capitan+Meadow+Yosemite" target="_blank" rel="noopener"><b>03</b><span>El Capitan Meadow</span><small>Climber spotting and granite views.</small></a>
+            <a href="https://maps.google.com/?q=Sentinel+Bridge+Yosemite" target="_blank" rel="noopener"><b>04</b><span>Sentinel Bridge</span><small>Classic Half Dome composition.</small></a>
+            <a href="https://maps.google.com/?q=Valley+View+Yosemite" target="_blank" rel="noopener"><b>05</b><span>Valley View</span><small>River-level panorama before departure.</small></a>
+            <a href="https://maps.google.com/?q=Cooks+Meadow+Loop+Yosemite" target="_blank" rel="noopener"><b>+</b><span>Optional walk</span><small>Cook’s Meadow Loop · about 1 mile.</small></a>
+          </div>
+          <div class="event"><time>3:00–6:00 PM</time><div><h4>Pool time at Rush Creek Lodge</h4></div></div>
+          <div class="event dinner"><time>6:30 PM</time><div><h4>Dinner at The Tavern</h4><p>Saturday dinner at Rush Creek Lodge.</p></div></div>
+        </div></article>
+
+        <article class="day reveal"><div class="date"><span>Sun</span><b>19</b><small>July</small></div><div class="day-content"><h3>Morning hike &amp; flexible afternoon</h3>
+          <div class="event"><time>7:00–9:00 AM</time><div><h4>Rush Creek Adventure Trail</h4><p>Approximately 2.7 miles round trip from the lodge.</p></div></div>
+          <div class="choices"><div><span>Option A</span><h4>Hetch Hetchy → Wapama Falls</h4><p>About 45 minutes by car · roughly 5 miles round trip.</p></div><div><span>Option B</span><h4>Mirror Lake Trail</h4><p>2–5 miles round trip · mostly flat with Half Dome views.</p></div></div>
+          <div class="event"><time>7:00 PM</time><div><h4>Dinner at The Tavern</h4></div></div>
+        </div></article>
+
+        <article class="day reveal"><div class="date"><span>Mon</span><b>20</b><small>July</small></div><div class="day-content"><h3>Departure</h3><div class="event"><time>Morning</time><div><h4>Check out and head home</h4><p>Allow additional time for summer road traffic.</p></div></div></div></article>
       </div>
-      <aside class="hero-card reveal">
-        <p class="mini-label">Travel note</p>
-        <p>Leave Rush Creek Lodge early for Yosemite Valley. Summer traffic and parking become significantly busier later in the morning.</p>
-        <div class="hero-card-footer"><span>Base</span><strong>Highway 120 West Gate</strong></div>
-      </aside>
-    </section>
+    </div>
+  </section>
 
-    <section id="overview" class="intro section-shell">
-      <div class="intro-title reveal"><p class="eyebrow dark">The weekend at a glance</p><h2>A slower, more scenic way to experience Yosemite.</h2></div>
-      <div class="intro-copy reveal"><p>This itinerary balances Yosemite’s classic viewpoints with time to unwind at Rush Creek Lodge. Saturday is built around a relaxed Cathedral Beach picnic, followed by easy valley stops and an earlier dinner back at the lodge.</p><div class="stats"><div><strong>5</strong><span>signature valley stops</span></div><div><strong>1</strong><span>picnic by the Merced</span></div><div><strong>2</strong><span>Sunday hike choices</span></div></div></div>
-    </section>
+  <section id="cathedral" class="cathedral">
+    <div class="cathedral-photo scenic-fallback"><img class="remote-image" src="https://www.nps.gov/npgallery/GetAsset/F0103896-0B72-4458-8DCC-9393098FCB46" alt="Granite landscape in Yosemite National Park" loading="lazy"></div>
+    <div class="cathedral-copy"><p class="kicker dark">Featured experience</p><h2>Cathedral Beach, unhurried.</h2><p class="lead">Plan for roughly three hours with enough time for a shaded picnic, river views and family photos.</p>
+      <ol class="schedule">
+        <li><time>11:00 AM</time><div><b>Arrive and choose a shaded picnic area</b><p>Settle near the Merced River while protecting vegetation.</p></div></li>
+        <li><time>11:30 AM</time><div><b>Picnic lunch</b><p>Enjoy views toward El Capitan and Cathedral Rocks.</p></div></li>
+        <li><time>12:30 PM</time><div><b>Riverfront stroll and photos</b><p>Look for reflections and capture relaxed group photos.</p></div></li>
+        <li><time>1:15 PM</time><div><b>Optional nearby viewpoint</b><p>Continue to Sentinel Bridge, depending on parking and energy.</p></div></li>
+        <li><time>2:00 PM</time><div><b>Depart for the next valley stop</b></div></li>
+      </ol>
+      <div class="note"><b>River safety:</b> Water levels and currents can change quickly. Enter only where permitted and when conditions are safe.</div>
+    </div>
+  </section>
 
-    <section class="photo-ribbon" aria-label="Rush Creek Lodge gallery">
-      <figure class="wide reveal"><img src="assets/images/rush-room.jpg" alt="Contemporary guest room at Rush Creek Lodge" loading="lazy"><figcaption>Rush Creek Lodge · lodge room</figcaption></figure>
-      <figure class="reveal"><img src="assets/images/rush-balcony.jpg" alt="Private balcony at Rush Creek Lodge overlooking the forest" loading="lazy"><figcaption>Forest-view balcony</figcaption></figure>
-      <figure class="reveal"><img src="assets/images/rush-bed.jpg" alt="King bed guest room at Rush Creek Lodge" loading="lazy"><figcaption>Comfort after a day in the park</figcaption></figure>
-    </section>
+  <section id="packing" class="packing shell"><div class="heading dark-head"><p class="kicker dark">Pack for the picnic</p><h2>Cathedral Beach essentials.</h2></div>
+    <div class="checklist" id="checklist">
+      <label><input type="checkbox"><span>Picnic blanket</span></label><label><input type="checkbox"><span>Cooler or insulated bag</span></label><label><input type="checkbox"><span>Lunch and snacks</span></label><label><input type="checkbox"><span>Reusable water bottles</span></label><label><input type="checkbox"><span>Sunscreen and hat</span></label><label><input type="checkbox"><span>Sunglasses</span></label><label><input type="checkbox"><span>Light layer</span></label><label><input type="checkbox"><span>Camera or phone</span></label><label><input type="checkbox"><span>Portable charger</span></label><label><input type="checkbox"><span>Bug spray</span></label><label><input type="checkbox"><span>Towel / water shoes</span></label><label><input type="checkbox"><span>Trash bag for pack-out</span></label>
+    </div><div class="actions"><button class="btn" id="reset" type="button">Reset checklist</button><button class="btn outline" onclick="window.print()" type="button">Print itinerary</button></div>
+  </section>
 
-    <section id="itinerary" class="itinerary-section">
-      <div class="section-shell">
-        <div class="section-heading reveal"><p class="eyebrow">Your itinerary</p><h2>Four days, thoughtfully paced.</h2></div>
-        <div class="timeline">
-          <article class="day-card reveal"><div class="day-date"><span>Thu</span><strong>17</strong><small>July</small></div><div class="day-body"><h3>Arrival &amp; lodge afternoon</h3><div class="event"><time>3:00 PM</time><div><h4>Check in at Rush Creek Lodge</h4><p>Settle in and get familiar with the property.</p></div></div><div class="event"><time>3:00–7:00 PM</time><div><h4>Pool time</h4><p>An easy first afternoon to relax and reset.</p></div></div><div class="event"><time>7:00 PM</time><div><h4>Dinner at The Tavern</h4><p>Casual onsite dinner, followed by stargazing and/or s’mores at 9:00 PM.</p></div></div></div></article>
+  <section id="stay" class="stay"><div class="stay-gallery"><img src="rush-balcony.jpg" alt="Rush Creek Lodge forest-view balcony"><img src="rush-bed.jpg" alt="Guest room bed at Rush Creek Lodge"></div><div class="stay-copy"><p class="kicker">Your home base</p><h2>Rush Creek Lodge</h2><p>Contemporary mountain comfort near Yosemite’s Highway 120 west entrance, with onsite dining, a pool and inviting spaces after a day in the park.</p><div class="facts"><span><b>Check-in</b>3:00 PM</span><span><b>Dining</b>The Tavern</span><span><b>Best for</b>Families &amp; groups</span></div><a class="btn light" href="https://www.rushcreeklodge.com/" target="_blank" rel="noopener">Visit lodge website</a></div></section>
 
-          <article class="day-card featured reveal"><div class="day-date"><span>Fri</span><strong>18</strong><small>July</small></div><div class="day-body"><h3>Yosemite Valley icons</h3><div class="event"><time>8:00 AM</time><div><h4>Enter Yosemite National Park</h4><p>Begin early to make the most of lighter traffic and easier parking.</p></div></div><div class="stop-grid"><div><b>01</b><span>Tunnel View</span><small>Classic panorama of El Capitan, Half Dome and Bridalveil Fall.</small></div><div><b>02</b><span>Cathedral Beach</span><small>Picnic by the Merced River with dramatic El Capitan views.</small></div><div><b>03</b><span>El Capitan Meadow</span><small>Quick photo stop and possible climber spotting.</small></div><div><b>04</b><span>Sentinel Bridge</span><small>A postcard-perfect Half Dome viewpoint.</small></div><div><b>05</b><span>Valley View</span><small>A final river-level panorama before leaving the valley.</small></div><div><b>+</b><span>Optional walk</span><small>Cook’s Meadow Loop · approximately 1 mile.</small></div></div><div class="event"><time>3:00–7:00 PM</time><div><h4>Pool time at Rush Creek Lodge</h4></div></div><div class="event accent"><time>6:30 PM</time><div><h4>Saturday-style family dinner timing</h4><p>Dinner at The Tavern, Rush Creek Lodge. Please adjust the day label in your final guest communication if Saturday corresponds to a different calendar date.</p></div></div></div></article>
-
-          <article class="day-card reveal"><div class="day-date"><span>Sat</span><strong>19</strong><small>July</small></div><div class="day-body"><h3>Morning hike &amp; flexible afternoon</h3><div class="event"><time>7:00–9:00 AM</time><div><h4>Rush Creek Adventure Trail</h4><p>Approximately 2.7 miles round trip from the lodge.</p></div></div><div class="choice-grid"><div><p class="mini-label">Option A</p><h4>Hetch Hetchy → Wapama Falls</h4><p>About 45 minutes by car · approximately 5 miles round trip.</p></div><div><p class="mini-label">Option B</p><h4>Mirror Lake Trail</h4><p>2–5 miles round trip · mostly flat with classic Half Dome reflections when conditions cooperate.</p></div></div><div class="event"><time>7:00 PM</time><div><h4>Dinner at The Tavern</h4></div></div></div></article>
-
-          <article class="day-card reveal"><div class="day-date"><span>Sun</span><strong>20</strong><small>July</small></div><div class="day-body"><h3>Departure</h3><div class="event"><time>Morning</time><div><h4>Check out and head home</h4><p>Allow extra time for weekend road traffic.</p></div></div></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="cathedral" class="cathedral-section">
-      <div class="section-shell split-layout">
-        <div class="cathedral-art reveal" role="img" aria-label="Stylized Yosemite river landscape"><div class="sun"></div><div class="mountain one"></div><div class="mountain two"></div><div class="trees"></div><div class="river"></div><span>Cathedral Beach<br><small>Merced River · Yosemite Valley</small></span></div>
-        <div class="reveal"><p class="eyebrow dark">Featured experience</p><h2>Cathedral Beach, unhurried.</h2><p class="lead">Plan for roughly three hours, with enough time for a shaded picnic, river views and family photos without rushing.</p><ol class="schedule"><li><time>11:00 AM</time><div><strong>Arrive &amp; choose a shaded picnic area</strong><p>Settle near the river while keeping a respectful distance from sensitive vegetation.</p></div></li><li><time>11:30 AM</time><div><strong>Picnic lunch</strong><p>Enjoy views toward El Capitan and Cathedral Rocks.</p></div></li><li><time>12:30 PM</time><div><strong>Riverfront stroll &amp; photos</strong><p>Walk the shoreline, look for reflections and take relaxed group photos.</p></div></li><li><time>1:15 PM</time><div><strong>Optional nearby viewpoint</strong><p>Continue to Sentinel Bridge or another nearby valley stop, depending on parking and energy levels.</p></div></li><li><time>2:00 PM</time><div><strong>Depart for the next valley stop</strong></div></li></ol><div class="safety-note"><strong>River safety:</strong> conditions can change quickly. Enter the water only where permitted and only when currents and water levels are safe.</div></div>
-      </div>
-    </section>
-
-    <section id="packing" class="packing-section section-shell">
-      <div class="section-heading reveal"><p class="eyebrow dark">Pack for the picnic</p><h2>Cathedral Beach essentials.</h2></div>
-      <div class="checklist reveal" id="checklist">
-        <label><input type="checkbox"><span>Picnic blanket</span></label><label><input type="checkbox"><span>Cooler or insulated bag</span></label><label><input type="checkbox"><span>Lunch and snacks</span></label><label><input type="checkbox"><span>Reusable water bottles</span></label><label><input type="checkbox"><span>Sunscreen and hat</span></label><label><input type="checkbox"><span>Sunglasses</span></label><label><input type="checkbox"><span>Light layer</span></label><label><input type="checkbox"><span>Camera or phone</span></label><label><input type="checkbox"><span>Portable charger</span></label><label><input type="checkbox"><span>Bug spray</span></label><label><input type="checkbox"><span>Towel / water shoes</span></label><label><input type="checkbox"><span>Trash bag for pack-out</span></label>
-      </div>
-      <div class="packing-actions"><button class="button" type="button" id="reset-checklist">Reset checklist</button><button class="button button-outline" type="button" onclick="window.print()">Print itinerary</button></div>
-    </section>
-
-    <section id="stay" class="stay-section">
-      <div class="stay-image"><img src="assets/images/rush-balcony.jpg" alt="Rush Creek Lodge balcony surrounded by trees" loading="lazy"></div>
-      <div class="stay-copy reveal"><p class="eyebrow">Your home base</p><h2>Rush Creek Lodge</h2><p>Contemporary mountain comfort just outside Yosemite’s Highway 120 west entrance, with onsite dining, a pool and relaxed spaces for reconnecting after a full park day.</p><div class="stay-facts"><span><b>Check-in</b> 3:00 PM</span><span><b>Dining</b> The Tavern</span><span><b>Best for</b> Families &amp; groups</span></div><a class="button button-light" href="https://www.rushcreeklodge.com/" target="_blank" rel="noopener">Visit lodge website</a></div>
-    </section>
-
-    <section class="notes section-shell reveal"><h2>Before you go</h2><div class="notes-grid"><div><span>01</span><h3>Leave early</h3><p>Summer congestion can add significant time. Build in flexibility for parking and road delays.</p></div><div><span>02</span><h3>Leave No Trace</h3><p>Pack out all picnic waste and do not feed wildlife.</p></div><div><span>03</span><h3>Check conditions</h3><p>Review current park alerts, road conditions, fire information and river safety notices before departure.</p></div></div></section>
-  </main>
-
-  <footer><div class="brand footer-brand"><span class="brand-mark">C&amp;P</span><span><strong>Chapters &amp; Passports LLC</strong><small>Curated by Emmett Bamba</small></span></div><p>Yosemite Weekend · July 17–20</p><p class="credit">Rush Creek Lodge photography used from the property’s official website. Yosemite information should be reconfirmed before travel.</p></footer>
-  <script src="assets/js/main.js"></script>
-</body>
-</html>
+  <section class="shell before"><h2>Before you go</h2><div><article><span>01</span><h3>Leave early</h3><p>Summer congestion can add significant time. Build flexibility into the day.</p></article><article><span>02</span><h3>Leave No Trace</h3><p>Pack out all picnic waste and never feed wildlife.</p></article><article><span>03</span><h3>Check conditions</h3><p>Review park alerts, road conditions, fire information and river notices before departure.</p></article></div></section>
+</main>
+<footer><div class="brand"><span class="stamp">C&amp;P</span><span><strong>Chapters &amp; Passports LLC</strong><small>Curated by Emmett Bamba</small></span></div><p>Yosemite Weekend · July 17–20, 2026</p><p class="credits">Rush Creek Lodge photography © Kim Carroll/property website. Yosemite photography via National Park Service. Confirm current park conditions before travel.</p></footer>
+<script src="main.js"></script>
+</body></html>
