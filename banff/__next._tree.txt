@@ -10,4 +10,4 @@
 :HL["/images/banff/sky-bistro-view.jpg","image"]
 :HL["/images/banff/sky-bistro-table.jpg","image"]
 :HL["/images/banff/lake-louise.jpg","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"banff","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"oxk0NRNezfE5yqbN3rhEO"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"banff","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"XzT0sDw9cAz7IXhrvwFtJ"}
